@@ -25,6 +25,7 @@ jobs:
           done
 
       - name: report upload
-        uses: action/upload-artifact@v2
+        uses: action/upload-artifact@v3
         with:
-          path: count.log
+          
+          name: count.log
