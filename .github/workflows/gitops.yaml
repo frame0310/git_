@@ -21,11 +21,10 @@ jobs:
         run: |
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
           echo "$file was changed"
-          echo "Count Tab in files: `grep -P '\t' $file | wc -l`" >> count.log 2>&1
-            #echo "$file has `grep '\t' $file | wc -l` tabs" >> count.log 2>&1
+          echo "$file has `grep -P '\t' $file | wc -l` tabs" >> count.log 2>&1
           done
 
       - name: report upload
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           path: count.log
